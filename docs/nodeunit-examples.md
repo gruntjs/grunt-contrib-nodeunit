@@ -1,25 +1,27 @@
-## Usage examples
+# Usage examples
 
-### Wildcards
+## Wildcards
 
-In this example, `grunt test` will test all `.js` files in the test directory. The wildcard is expanded to match each individual file and each ran by [Nodeunit][nodeunit].
+In this example, `grunt nodeunit` will test all files ending with `_test.js` in the `test` directory.
 
-```javascript
+```js
 // Project configuration.
 grunt.initConfig({
-  test: {
-    all: ['test/*.js']
+  nodeunit: {
+    all: ['test/*_test.js']
   }
 });
 ```
 
-With a slight modification, `grunt test` will test all `.js` files in the test directory _and all subdirectories_. See the [minimatch](https://github.com/isaacs/minimatch) module's documentation for more details on wildcard patterns.
+With a slight modification, `grunt nodeunit` will test files matching the same pattern in the `test` directory _and all subdirectories_.
 
-```javascript
+```js
 // Project configuration.
 grunt.initConfig({
-  test: {
-    all: ['test/**/*.js']
+  nodeunit: {
+    all: ['test/**/*_test.js']
   }
 });
 ```
+
+See the [minimatch](https://github.com/isaacs/minimatch) module documentation for more details on wildcard patterns.
