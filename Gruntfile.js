@@ -22,15 +22,21 @@ module.exports = function(grunt) {
       }
     },
 
+    // Unit tests.
+    nodeunit: {
+      tests: ['test/*_test.js']
+    }
+
   });
 
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
 
-  // The jshint plugin is used for linting.
+  // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-internal');
 
-  // By default, lint task.
-  grunt.registerTask('default', 'jshint');
+  // By default, lint and run all tests.
+  grunt.registerTask('default', ['jshint', 'nodeunit', 'build-contrib']);
 
 };
