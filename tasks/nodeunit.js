@@ -152,7 +152,7 @@ module.exports = function(grunt) {
     // File paths.
     var files = grunt.file.expandFiles(grunt.util._.pluck(this.files, 'src'));
     // Clear all tests' cached require data, in case this task is run inside a
-    // "watch" task loop.
+    // "watch" task loop. TODO: remove?
     grunt.file.clearRequireCache(files);
     // Run test(s)... asynchronously!
     nodeunit.reporters.grunt.run(files, {}, this.async());
