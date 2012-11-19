@@ -52,10 +52,11 @@ See the [minimatch](https://github.com/isaacs/minimatch) module documentation fo
 
 ## Release History
 
+ * 2012-11-12   v0.1.1   Switch to this.file api internally.
  * 2012-11-03   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Tue Nov 13 2012 16:50:48.*
+*This file was generated on Mon Nov 19 2012 11:45:39.*
