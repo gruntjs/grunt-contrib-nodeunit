@@ -36,6 +36,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-internal');
 
+  // The "test" task is just an alias for the default task.
+  grunt.registerTask('test', ['default']);
+
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'nodeunit', 'build-contrib']);
 
