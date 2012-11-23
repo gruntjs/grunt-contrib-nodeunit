@@ -10,12 +10,82 @@
 
 module.exports = function(grunt) {
 
- // Nodejs libs.
+  // Nodejs libs.
   var path = require('path');
+  var util = require('util');
 
   // External libs.
   var nodeunit = require('nodeunit');
-  var nodeunitUtils = require('nodeunit/lib/utils');
+
+  // ==========================================================================
+  // BETTER ERROR DISPLAY
+  // ==========================================================================
+
+  // Much nicer error formatting than what comes with nodeunit.
+  var betterErrors = function (assertion) {
+    var e = assertion.error;
+    if (!e || !e.actual || !e.expected) { return assertion; }
+
+    // Temporarily override the global "inspect" property because logging
+    // the entire global object is just silly.
+    var globalInspect = global.inspect;
+    global.inspect = function() { return '[object global]'; };
+
+    e._message = e.message;
+
+    // Pretty-formatted objects.
+    var actual = util.inspect(e.actual, false, 10, true);
+    var expected = util.inspect(e.expected, false, 10, true);
+
+    var indent = function(str) {
+      return str.split('\n').map(function(s) { return '  ' + s; }).join('\n');
+    };
+
+    var stack;
+    var multiline = (actual + expected).indexOf('\n') !== -1;
+    if (multiline) {
+      stack = [
+        'Actual:', indent(actual),
+        'Operator:', indent(e.operator),
+        'Expected:', indent(expected),
+      ].join('\n');
+    } else {
+      stack = e.name + ': ' + actual + ' ' + e.operator + ' ' + expected;
+    }
+
+    e.stack = stack + '\n' + e.stack.split('\n').slice(1).join('\n');
+
+    // Restore the global "inspect" property.
+    global.inspect = globalInspect;
+    return assertion;
+  };
+
+  // Reformat stack trace to remove nodeunit scripts, fix indentation, etc.
+  var cleanStack = function(error) {
+    error._stack = error.stack;
+    // Match (/path/to/cwd for later removal.
+    var cwdRe = new RegExp('(\\()' + process.cwd() + '/', 'g');
+    // Show a full stack trace?
+    var fullStack = grunt.option('verbose') || grunt.option('stack');
+    // Reformat stack trace output.
+    error.stack = error.stack.split('\n').map(function(line) {
+      if (line[0] === ' ') {
+        // Remove nodeunit script srcs from non-verbose stack trace.
+        if (!fullStack && /node_modules\/nodeunit\//.test(line)) {
+          return '';
+        }
+        // Remove leading spaces.
+        line = line.replace(/^ {4}(?=at)/, '');
+        // Remove cwd.
+        line = line.replace(cwdRe, '$1');
+      } else {
+        line = line.replace(/Assertion(Error)/, '$1');
+      }
+      return line + '\n';
+    }).join('');
+
+    return error;
+  };
 
   // ==========================================================================
   // CUSTOM NODEUNIT REPORTER
@@ -46,14 +116,13 @@ module.exports = function(grunt) {
     var assertion, stack;
     // Print each assertion error + stack.
     while (assertion = failedAssertions.shift()) {
-      nodeunitUtils.betterErrors(assertion);
+      betterErrors(assertion);
+      cleanStack(assertion.error);
       grunt.verbose.or.error(assertion.testName);
       if (assertion.error.name === 'AssertionError' && assertion.message) {
-        grunt.log.error('AssertionMessage: ' + assertion.message.magenta);
+        grunt.log.error('Message: ' + assertion.message.magenta);
       }
-      stack = assertion.error.stack.replace(/ {4}(at)/g, '  $1');
-      stack = stack.replace(/:(.*?\n)/, '$1'.magenta);
-      grunt.log.error(stack + '\n').writeln();
+      grunt.log.error(assertion.error.stack).writeln();
     }
   }
 
