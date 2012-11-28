@@ -18,6 +18,10 @@ npm install grunt-contrib-nodeunit --save-dev
 ## Nodeunit task
 _Run this task with the `grunt nodeunit` command._
 
+_This task is a [multi task][] so any targets, files and options should be specified according to the [multi task][] documentation._
+[multi task]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
+
+
 This plugin provides server-side JavaScript unit testing via [nodeunit](https://github.com/caolan/nodeunit/). If you're looking to test JavaScript that uses `window` or the DOM, please use the [grunt-contrib-qunit plugin](https://github.com/gruntjs/grunt-contrib-qunit)`qunit` task.
 
 
@@ -25,7 +29,7 @@ This plugin provides server-side JavaScript unit testing via [nodeunit](https://
 
 #### Wildcards
 
-In this example, `grunt nodeunit` will test all files ending with `_test.js` in the `test` directory.
+In this example, `grunt nodeunit:all` (or `grunt nodeunit` because `nodeunit` is a [multi task][]) will test all files ending with `_test.js` in the `test` directory.
 
 ```js
 // Project configuration.
@@ -36,7 +40,7 @@ grunt.initConfig({
 });
 ```
 
-With a slight modification, `grunt nodeunit` will test files matching the same pattern in the `test` directory _and all subdirectories_.
+With a slight modification, `grunt nodeunit:all` will test files matching the same pattern in the `test` directory _and all subdirectories_.
 
 ```js
 // Project configuration.
@@ -47,7 +51,9 @@ grunt.initConfig({
 });
 ```
 
-See the [minimatch](https://github.com/isaacs/minimatch) module documentation for more details on wildcard patterns.
+See the [file globbing] documentation for more details on wildcard patterns.
+
+[file globbing]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
 
 
 ## Release History
@@ -59,4 +65,4 @@ See the [minimatch](https://github.com/isaacs/minimatch) module documentation fo
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Mon Nov 19 2012 11:45:39.*
+*This file was generated on Wed Nov 28 2012 08:52:52.*
