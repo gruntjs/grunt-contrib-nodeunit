@@ -218,7 +218,7 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('nodeunit', 'Run Nodeunit unit tests.', function() {
     // Run test(s).
-    nodeunit.reporters.grunt.run(this.file.src, {}, this.async());
+    nodeunit.reporters.grunt.run(this.filesSrc, {}, this.async());
   });
 
 };
