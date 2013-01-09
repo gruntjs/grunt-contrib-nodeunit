@@ -58,6 +58,7 @@ See the [file globbing] documentation for more details on wildcard patterns.
 
 ## Release History
 
+ * 2013-01-08   v0.1.2rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
  * 2012-11-12   v0.1.1   Switch to this.file api internally.
  * 2012-11-03   v0.1.0   Work in progress, not yet officially released.
 
@@ -65,4 +66,4 @@ See the [file globbing] documentation for more details on wildcard patterns.
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Wed Nov 28 2012 08:52:52.*
+*This file was generated on Wed Jan 09 2013 14:12:19.*
