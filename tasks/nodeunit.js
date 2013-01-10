@@ -193,6 +193,7 @@ module.exports = function(grunt) {
             grunt.warn(assertions.failures() + '/' + assertions.length +
               ' assertions failed (' + assertions.duration + 'ms)');
           } else if (assertions.length === 0) {
+            // Only throw warning when test files exists
             if(files.length > 0){
               grunt.warn('0/0 assertions ran (' + assertions.duration + 'ms)');
             } else {
