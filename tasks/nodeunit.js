@@ -197,7 +197,7 @@ module.exports = function(grunt) {
             if(files.length > 0){
               grunt.warn('0/0 assertions ran (' + assertions.duration + 'ms)');
             } else {
-              grunt.log.ok('No test files found, so no assertions was run.');
+              grunt.log.ok('No test files found, so no assertions were run.');
             }
           } else {
             grunt.verbose.writeln();
