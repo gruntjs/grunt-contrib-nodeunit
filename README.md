@@ -12,7 +12,7 @@ npm install grunt-contrib-nodeunit --save-dev
 ```
 
 [grunt]: http://gruntjs.com/
-[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
+[Getting Started]: http://gruntjs.com/getting-started
 
 
 ## Nodeunit task
@@ -67,4 +67,4 @@ See the [file globbing] documentation for more details on wildcard patterns.
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Fri Jan 18 2013 10:16:06.*
+*This file was generated on Tue Feb 05 2013 11:59:45.*
