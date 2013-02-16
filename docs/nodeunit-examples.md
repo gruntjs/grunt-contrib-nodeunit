@@ -23,7 +23,3 @@ grunt.initConfig({
   }
 });
 ```
-
-See the [file globbing] documentation for more details on wildcard patterns.
-
-[file globbing]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
