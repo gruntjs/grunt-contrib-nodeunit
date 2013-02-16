@@ -48,11 +48,6 @@ grunt.initConfig({
 });
 ```
 
-See the [file globbing] documentation for more details on wildcard patterns.
-
-[file globbing]: https://github.com/gruntjs/grunt/wiki/Configuring-tasks
-
-
 ## Release History
 
  * 2013-02-14   v0.1.2   First official release for Grunt 0.4.0.
@@ -65,4 +60,4 @@ See the [file globbing] documentation for more details on wildcard patterns.
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Fri Feb 15 2013 19:14:51.*
+*This file was generated on Fri Feb 15 2013 19:51:48.*
