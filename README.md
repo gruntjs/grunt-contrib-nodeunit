@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit [![Build Status](https://secure.travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](http://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
+# grunt-contrib-nodeunit [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
 
 > Run Nodeunit unit tests.
 
@@ -34,7 +34,7 @@ This plugin provides server-side JavaScript unit testing via [nodeunit](https://
 
 #### Wildcards
 
-In this example, `grunt nodeunit:all` (or `grunt nodeunit` because `nodeunit` is a [multi task][]) will test all files ending with `_test.js` in the `test` directory.
+In this example, `grunt nodeunit:all` or `grunt nodeunit` will test all files ending with `_test.js` in the `test` directory.
 
 ```js
 // Project configuration.
@@ -58,14 +58,15 @@ grunt.initConfig({
 
 ## Release History
 
- * 2013-02-14   v0.1.2   First official release for Grunt 0.4.0.
- * 2013-01-17   v0.1.2rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
- * 2013-01-08   v0.1.2rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
- * 2012-11-12   v0.1.1   Switch to this.file api internally.
- * 2012-11-03   v0.1.0   Work in progress, not yet officially released.
+ * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0
+ * 2013-02-15   v0.1.2   First official release for Grunt 0.4.0.
+ * 2013-01-18   v0.1.2rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
+ * 2013-01-09   v0.1.2rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
+ * 2012-11-13   v0.1.1   Switch to this.file api internally.
+ * 2012-11-04   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Wed Feb 20 2013 12:36:00.*
+*This file was generated on Thu May 23 2013 11:27:24.*

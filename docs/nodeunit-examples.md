@@ -2,7 +2,7 @@
 
 ## Wildcards
 
-In this example, `grunt nodeunit:all` (or `grunt nodeunit` because `nodeunit` is a [multi task][]) will test all files ending with `_test.js` in the `test` directory.
+In this example, `grunt nodeunit:all` or `grunt nodeunit` will test all files ending with `_test.js` in the `test` directory.
 
 ```js
 // Project configuration.
