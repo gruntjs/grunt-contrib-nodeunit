@@ -193,7 +193,12 @@ module.exports = function(grunt) {
             grunt.warn(assertions.failures() + '/' + assertions.length +
               ' assertions failed (' + assertions.duration + 'ms)');
           } else if (assertions.length === 0) {
-            grunt.warn('0/0 assertions ran (' + assertions.duration + 'ms)');
+            // Only throw warning when test files exists
+            if(files.length > 0){
+              grunt.warn('0/0 assertions ran (' + assertions.duration + 'ms)');
+            } else {
+              grunt.log.ok('No test files found, so no assertions were run.');
+            }
           } else {
             grunt.verbose.writeln();
             grunt.log.ok(assertions.length + ' assertions passed (' +
@@ -219,6 +224,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('nodeunit', 'Run Nodeunit unit tests.', function() {
     // Run test(s).
     nodeunit.reporters.grunt.run(this.filesSrc, {}, this.async());
+
   });
 
 };
