@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
+# grunt-contrib-nodeunit v0.2.1 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
 
 > Run Nodeunit unit tests.
 
@@ -58,6 +58,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-09-24   v0.2.1   Fix error display.
  * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0
  * 2013-02-15   v0.1.2   First official release for Grunt 0.4.0.
  * 2013-01-18   v0.1.2rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
@@ -69,4 +70,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Thu May 23 2013 11:27:24.*
+*This file was generated on Tue Sep 24 2013 20:14:22.*
