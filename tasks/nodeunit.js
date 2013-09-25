@@ -24,7 +24,7 @@ module.exports = function(grunt) {
   // Much nicer error formatting than what comes with nodeunit.
   var betterErrors = function (assertion) {
     var e = assertion.error;
-    if (!e || !e.actual || !e.expected) { return assertion; }
+    if (!e || !('actual' in e) || !('expected' in e)) { return assertion; }
 
     // Temporarily override the global "inspect" property because logging
     // the entire global object is just silly.
