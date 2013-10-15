@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     var expected = util.inspect(e.expected, false, 10, true);
 
     var indent = function(str) {
-      return str.split('\n').map(function(s) { return '  ' + s; }).join('\n');
+      return (''+str).split('\n').map(function(s) { return '  ' + s; }).join('\n');
     };
 
     var stack;
