@@ -1,7 +1,3 @@
-v0.2.3:
-  date: 2013-11-12
-  changes:
-    - Adds reporter and reporterOutput options
 v0.2.2:
   date: 2013-10-19
   changes:
