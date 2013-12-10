@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v0.2.2 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
+# grunt-contrib-nodeunit v0.2.3 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
 
 > Run Nodeunit unit tests.
 
@@ -35,7 +35,7 @@ This plugin provides server-side JavaScript unit testing via [nodeunit](https://
 * Type: `String`
 * Default: `grunt`
 
-Specifies the reporter you want to use.  For example, `default`, `verbose` or `tap`.
+Specifies the reporter you want to use.  For example, `default`, `grunt`, `verbose` or `tap`.
 
 #### options.reporterOutput
 * Type: `Boolean`
@@ -77,8 +77,8 @@ grunt.initConfig({
   nodeunit: {
     all: ['test/*_test.js'],
     options: {
-        reporter: 'tap',
-        reporterOutput: 'tests.tap'
+      reporter: 'tap',
+      reporterOutput: false
     }
   }
 });
@@ -87,6 +87,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2013-12-10   v0.2.3   Adds 'reporter' and 'reporterOutput' options.
  * 2013-10-19   v0.2.2   Allow missing operators on error object.
  * 2013-09-24   v0.2.1   Fix error display.
  * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0
