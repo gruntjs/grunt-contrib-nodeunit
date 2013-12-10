@@ -23,3 +23,19 @@ grunt.initConfig({
   }
 });
 ```
+## Using Other Reporters
+
+To use a reporter other than the default one, you can specify the `reporter` and `reporterOutput` parameters.
+
+```js
+// Project configuration.
+grunt.initConfig({
+  nodeunit: {
+    all: ['test/*_test.js'],
+    options: {
+        reporter: 'tap',
+        reporterOutput: 'tests.tap'
+    }
+  }
+});
+```

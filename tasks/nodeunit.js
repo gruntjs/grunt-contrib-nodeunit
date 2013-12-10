@@ -217,8 +217,46 @@ module.exports = function(grunt) {
   // ==========================================================================
 
   grunt.registerMultiTask('nodeunit', 'Run Nodeunit unit tests.', function() {
+    var done = this.async();
+
+    // Merge task-specific and/or target-specific options with these defaults.
+    var options = this.options({
+      reporterOutput: false,
+      reporter: 'grunt',
+    });
+
+    if (!nodeunit.reporters[options.reporter]) {
+      return done(new Error('Reporter ' + options.reporter + ' not found'));
+    }
+
+    var output = '';
+    var hooker = grunt.util.hooker;
+
+    if (options.reporterOutput) {
+      // Hook into stdout to capture report
+      hooker.hook(process.stdout, 'write', {
+        pre: function(str) {
+          output += str;
+          return hooker.preempt();
+        }
+      });
+    }
+
     // Run test(s).
-    nodeunit.reporters.grunt.run(this.filesSrc, {}, this.async());
+    nodeunit.reporters[options.reporter].run(this.filesSrc, {}, function(err) {
+      // Write the output of the reporter if wanted
+      if (options.reporterOutput) {
+        // no longer hook stdout so we can grunt.log
+        hooker.unhook(process.stdout, 'write');
+
+        // save all of the output we saw up to this point
+        grunt.file.write(options.reporterOutput, output);
+
+        grunt.log.ok('Report "' + options.reporterOutput + '" created.');
+      }
+
+      done(err);
+    });
   });
 
 };
