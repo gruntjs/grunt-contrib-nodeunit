@@ -27,6 +27,11 @@ module.exports = function(grunt) {
     nodeunit: {
       tests: ['test/*_test.js'],
     },
+    
+    // clean tmp dir
+    clean: {
+      tests: ['tmp']
+    },
   });
 
   // Actually load this plugin's task(s).
@@ -34,6 +39,7 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-internal');
 
   // Whenever the "test" task is run, run some basic tests.
@@ -45,7 +51,22 @@ module.exports = function(grunt) {
     grunt.task.run('nodeunit');
   });
 
+  // Tests nodeunit with tap reporter and output saved to a file
+  grunt.registerTask('test-tap', function(which) {
+    var test = path.join('test', 'fixtures', which + '.js');
+    var tap = path.join('tmp', which + '.js.tap');
+    
+    if (grunt.file.exists(test)) {
+      grunt.config('nodeunit.tests', test);
+    }
+
+    grunt.config('nodeunit.options.reporter', 'tap');
+    grunt.config('nodeunit.options.reporterOutput', tap);
+
+    grunt.task.run('clean');
+    grunt.task.run('nodeunit');
+  });
+
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'nodeunit', 'build-contrib']);
-
 };
