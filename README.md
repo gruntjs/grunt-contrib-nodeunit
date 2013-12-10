@@ -29,11 +29,17 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 This plugin provides server-side JavaScript unit testing via [nodeunit](https://github.com/caolan/nodeunit/). If you're looking to test JavaScript that uses `window` or the DOM, please use the [grunt-contrib-qunit plugin](https://github.com/gruntjs/grunt-contrib-qunit)`qunit` task.
 
-### reporter
+### Settings
+
+#### options.reporter
+* Type: `String`
+* Default: `grunt`
 
 Specifies the reporter you want to use.  For example, `default`, `verbose` or `tap`.
 
-### reporterOutput
+#### options.reporterOutput
+* Type: `Boolean`
+* Default: false
 
 Specifies the file the `reporter`'s output should be saved to.  For example, `tests.tap`.
 ### Usage examples
@@ -94,4 +100,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Sat Oct 19 2013 14:59:01.*
+*This file was generated on Tue Dec 10 2013 08:39:38.*
