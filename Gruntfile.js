@@ -51,8 +51,23 @@ module.exports = function(grunt) {
     grunt.task.run('nodeunit');
   });
 
-  // Tests nodeunit with tap reporter and output saved to a file
+  // Tests nodeunit with tap reporter
   grunt.registerTask('test-tap', function(which) {
+    var test = path.join('test', 'fixtures', which + '.js');
+    var tap = path.join('tmp', which + '.js.tap');
+    
+    if (grunt.file.exists(test)) {
+      grunt.config('nodeunit.tests', test);
+    }
+
+    grunt.config('nodeunit.options.reporter', 'tap');
+
+    grunt.task.run('clean');
+    grunt.task.run('nodeunit');
+  });
+  
+  // Tests nodeunit with tap reporter and output saved to a file
+  grunt.registerTask('test-tap-out', function(which) {
     var test = path.join('test', 'fixtures', which + '.js');
     var tap = path.join('tmp', which + '.js.tap');
     
