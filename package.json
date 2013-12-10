@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-nodeunit",
   "description": "Run Nodeunit unit tests.",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "homepage": "https://github.com/gruntjs/grunt-contrib-nodeunit",
   "author": {
     "name": "Grunt Team",
