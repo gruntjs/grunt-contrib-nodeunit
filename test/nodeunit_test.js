@@ -38,8 +38,6 @@ exports.nodeunit = {
       test.done();
     });
   },
-  /*
-  TODO: This will work once https://github.com/caolan/nodeunit/pull/230 is approved
   tap_out_fail: function(test) {
     test.expect(7);
     grunt.util.spawn({
@@ -47,7 +45,7 @@ exports.nodeunit = {
       args: ['test-tap-out:fail', '--no-color'],
     }, function(err, result,code) {
       // stdout message
-      test.ok(result.stdout.indexOf('Report "tmp\\fail.js.tap" created') !== -1, 'File creation notice should be displayed.');
+      test.ok(result.stdout.indexOf('fail.js.tap" created') !== -1, 'File creation notice should be displayed.');
 
       // verify parts of the fail.js.tap contents against ours
       var tapFile = path.join('tmp', 'fail.js.tap');
@@ -62,5 +60,5 @@ exports.nodeunit = {
 
       test.done();
     });
-  }*/
+  }
 };
