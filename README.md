@@ -32,16 +32,17 @@ This plugin provides server-side JavaScript unit testing via [nodeunit](https://
 ### Settings
 
 #### options.reporter
-* Type: `String`
-* Default: `grunt`
+* Type: `String`  
+* Default: `'grunt'`  
 
-Specifies the reporter you want to use.  For example, `default`, `grunt`, `verbose` or `tap`.
+Specifies the reporter you want to use. For example, `default`, `verbose` or `tap`.
 
 #### options.reporterOutput
-* Type: `Boolean`
-* Default: false
+* Type: `Boolean`  
+* Default: `false`  
 
-Specifies the file the `reporter`'s output should be saved to.  For example, `tests.tap`.
+Specifies the file the `reporter`'s output should be saved to. For example, `tests.tap`.
+
 ### Usage examples
 
 #### Wildcards
@@ -49,7 +50,6 @@ Specifies the file the `reporter`'s output should be saved to.  For example, `te
 In this example, `grunt nodeunit:all` or `grunt nodeunit` will test all files ending with `_test.js` in the `test` directory.
 
 ```js
-// Project configuration.
 grunt.initConfig({
   nodeunit: {
     all: ['test/*_test.js']
@@ -60,25 +60,24 @@ grunt.initConfig({
 With a slight modification, `grunt nodeunit:all` will test files matching the same pattern in the `test` directory _and all subdirectories_.
 
 ```js
-// Project configuration.
 grunt.initConfig({
   nodeunit: {
     all: ['test/**/*_test.js']
   }
 });
 ```
+
 #### Using Other Reporters
 
 To use a reporter other than the default one, you can specify the `reporter` and `reporterOutput` parameters.
 
 ```js
-// Project configuration.
 grunt.initConfig({
   nodeunit: {
     all: ['test/*_test.js'],
     options: {
       reporter: 'tap',
-      reporterOutput: false
+      reporterOutput: 'tests.tap'
     }
   }
 });
@@ -87,7 +86,7 @@ grunt.initConfig({
 
 ## Release History
 
- * 2013-12-10   v0.3.0   Adds 'reporter' and 'reporterOutput' options.
+ * 2014-01-26   v0.3.0   Adds 'reporter' and 'reporterOutput' options.
  * 2013-10-19   v0.2.2   Allow missing operators on error object.
  * 2013-09-24   v0.2.1   Fix error display.
  * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0
@@ -101,4 +100,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Tue Dec 10 2013 14:34:22.*
+*This file was generated on Sun Jan 26 2014 20:00:41.*

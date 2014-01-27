@@ -1,5 +1,5 @@
 v0.3.0:
-  date: 2013-12-10
+  date: 2014-01-26
   changes:
     - Adds 'reporter' and 'reporterOutput' options.
 v0.2.2:
