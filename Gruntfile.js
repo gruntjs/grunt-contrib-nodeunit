@@ -82,6 +82,22 @@ module.exports = function(grunt) {
     grunt.task.run('nodeunit');
   });
 
+  // Tests nodeunit with junit reporter
+  grunt.registerTask('test-junit', function(which) {
+    var test = path.join('test', 'fixtures', which + '.js');
+    var outDir = path.join('tmp', which + '.junit');
+    
+    if (grunt.file.exists(test)) {
+      grunt.config('nodeunit.tests', test);
+    }
+
+    grunt.config('nodeunit.options.reporter', 'junit');
+    grunt.config('nodeunit.options.reporterOptions', { output: outDir });
+
+    grunt.task.run('clean');
+    grunt.task.run('nodeunit');
+  });
+
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'nodeunit', 'build-contrib']);
 };
