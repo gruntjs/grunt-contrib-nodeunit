@@ -43,6 +43,27 @@ Specifies the reporter you want to use. For example, `default`, `verbose` or `ta
 
 Specifies the file the `reporter`'s output should be saved to. For example, `tests.tap`.
 
+#### options.reporterOptions
+* Type: `Object`
+* Default: `{}`
+
+Specifies the options passed to the `reporter`.  For example, the `junit` reporter requires the `output` option
+to be set:
+
+```js
+grunt.initConfig({
+  nodeunit: {
+    all: ['test/*_test.js'],
+    options: {
+      reporter: 'junit',
+      reporterOptions: {
+        output: 'outputdir'
+      }
+    }
+  }
+});
+```
+
 ### Usage examples
 
 #### Wildcards
@@ -77,7 +98,10 @@ grunt.initConfig({
     all: ['test/*_test.js'],
     options: {
       reporter: 'tap',
-      reporterOutput: 'tests.tap'
+      reporterOutput: 'tests.tap',
+      reporterOptions: {
+        output: 'outputdir'
+      }
     }
   }
 });
@@ -100,4 +124,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Sun Jan 26 2014 20:00:41.*
+*This file was generated on Thu Feb 13 2014 13:57:08.*

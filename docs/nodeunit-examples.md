@@ -32,7 +32,10 @@ grunt.initConfig({
     all: ['test/*_test.js'],
     options: {
       reporter: 'tap',
-      reporterOutput: 'tests.tap'
+      reporterOutput: 'tests.tap',
+      reporterOptions: {
+        output: 'outputdir'
+      }
     }
   }
 });
