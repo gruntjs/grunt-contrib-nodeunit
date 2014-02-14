@@ -223,6 +223,7 @@ module.exports = function(grunt) {
     var options = this.options({
       reporterOutput: false,
       reporter: 'grunt',
+      reporterOptions: {}
     });
 
     if (!nodeunit.reporters[options.reporter]) {
@@ -243,7 +244,7 @@ module.exports = function(grunt) {
     }
 
     // Run test(s).
-    nodeunit.reporters[options.reporter].run(this.filesSrc, {}, function(err) {
+    nodeunit.reporters[options.reporter].run(this.filesSrc, options.reporterOptions, function(err) {
       // Write the output of the reporter if wanted
       if (options.reporterOutput) {
         // no longer hook stdout so we can grunt.log
