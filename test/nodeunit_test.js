@@ -79,5 +79,24 @@ exports.nodeunit = {
 
       test.done();
     });
-  }
+  },
+  minimal_fail: function(test) {
+    test.expect(3);
+    grunt.util.spawn({
+      grunt: true,
+      args: ['test-minimal:fail', '--no-color'],
+    }, function(err, result, code) {
+      // stdout message
+      test.ok(result.stdout.indexOf('fail.js.out" created') !== -1, 'File creation notice should be displayed.');
+
+      // verify parts of the fail.js.out contents against ours
+      var outFile = path.join('tmp', 'fail.js.out');
+      var contents = grunt.util.normalizelf(grunt.file.read(outFile));
+
+      test.ok(contents.indexOf('undefinedundefined') === -1, 'No `undefined`s in output from lack of nodeunit.json defaults');
+      test.ok(contents.indexOf('2/2 assertions failed') !== -1, 'Two assertions');
+
+      test.done();
+    });
+  },
 };

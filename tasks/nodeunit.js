@@ -13,6 +13,7 @@ module.exports = function(grunt) {
   // Nodejs libs.
   var path = require('path');
   var util = require('util');
+  var fs = require('fs');
 
   // External libs.
   var nodeunit = require('nodeunit');
@@ -225,6 +226,20 @@ module.exports = function(grunt) {
       reporter: 'grunt',
       reporterOptions: {}
     });
+
+    // Ensure the default nodeunit options are set by reading in the nodeunit.json file.
+    var nodeUnitDefaults = {};
+    var nodeUnitDefaultsFile = path.join(__dirname, '..', 'node_modules', 'nodeunit', 'bin', 'nodeunit.json');
+
+    if (fs.existsSync(nodeUnitDefaultsFile)) {
+      nodeUnitDefaults = JSON.parse(fs.readFileSync(nodeUnitDefaultsFile, 'utf8'));
+    }
+
+    for (var defaultVal in nodeUnitDefaults) {
+      if (typeof options.reporterOptions[defaultVal] === 'undefined') {
+        options.reporterOptions[defaultVal] = nodeUnitDefaults[defaultVal];
+      }
+    }
 
     if (!nodeunit.reporters[options.reporter]) {
       return done(new Error('Reporter ' + options.reporter + ' not found'));
