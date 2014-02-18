@@ -98,6 +98,22 @@ module.exports = function(grunt) {
     grunt.task.run('nodeunit');
   });
 
+  // Tests nodeunit with minimal reporter
+  grunt.registerTask('test-minimal', function(which) {
+    var test = path.join('test', 'fixtures', which + '.js');
+    var out = path.join('tmp', which + '.js.out');
+    
+    if (grunt.file.exists(test)) {
+      grunt.config('nodeunit.tests', test);
+    }
+
+    grunt.config('nodeunit.options.reporter', 'minimal');
+    grunt.config('nodeunit.options.reporterOutput', out);
+
+    grunt.task.run('clean');
+    grunt.task.run('nodeunit');
+  });
+
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'nodeunit', 'build-contrib']);
 };
