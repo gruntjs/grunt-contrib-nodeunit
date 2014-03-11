@@ -229,7 +229,15 @@ module.exports = function(grunt) {
 
     // Ensure the default nodeunit options are set by reading in the nodeunit.json file.
     var nodeUnitDefaults = {};
+
+    // check for nodeunit under our package's node_modules directory first
     var nodeUnitDefaultsFile = path.join(__dirname, '..', 'node_modules', 'nodeunit', 'bin', 'nodeunit.json');
+
+    if (!fs.existsSync(nodeUnitDefaultsFile)) {
+      // if both grunt-contrib-nodeunit and nodeunit are listed as dependencies for this project, they'd
+      // be located at the same folder level.  So check for that location next.
+      nodeUnitDefaultsFile = path.join(__dirname, '..', '..', 'nodeunit', 'bin', 'nodeunit.json');
+    }
 
     if (fs.existsSync(nodeUnitDefaultsFile)) {
       nodeUnitDefaults = JSON.parse(fs.readFileSync(nodeUnitDefaultsFile, 'utf8'));
