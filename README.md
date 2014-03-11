@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v0.3.2 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
+# grunt-contrib-nodeunit v0.3.3 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
 
 > Run Nodeunit unit tests.
 
@@ -124,4 +124,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Mon Feb 17 2014 22:12:33.*
+*This file was generated on Tue Mar 11 2014 18:48:11.*
