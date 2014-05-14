@@ -266,6 +266,12 @@ module.exports = function(grunt) {
       });
     }
 
+    // if reporterOutput has a directory destination make sure to create it.
+    // See: https://github.com/caolan/nodeunit/issues/262
+    if (options.reporterOptions.output) {
+      grunt.file.mkdir(path.normalize(options.reporterOptions.output));
+    }
+
     // Run test(s).
     nodeunit.reporters[options.reporter].run(this.filesSrc, options.reporterOptions, function(err) {
       // Write the output of the reporter if wanted
