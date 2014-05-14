@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 
   // External libs.
   var nodeunit = require('nodeunit');
+  var hooker = require('hooker');
 
   // ==========================================================================
   // BETTER ERROR DISPLAY
@@ -254,7 +255,6 @@ module.exports = function(grunt) {
     }
 
     var output = '';
-    var hooker = grunt.util.hooker;
 
     if (options.reporterOutput) {
       // Hook into stdout to capture report
