@@ -1,3 +1,7 @@
+v0.4.0:
+  date: 2014-05-14
+  changes:
+    - Bump nodeunit to v0.9.0
 v0.3.0:
   date: 2014-01-26
   changes:

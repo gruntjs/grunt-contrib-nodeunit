@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v0.3.3 [![Build Status](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit)
+# grunt-contrib-nodeunit v0.4.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit"><img src="https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh/branch/master" alt="Build Status: Windows" height="18" /></a>
 
 > Run Nodeunit unit tests.
 
@@ -110,6 +110,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2014-05-14   v0.4.0   Bump nodeunit to v0.9.0
  * 2014-01-26   v0.3.0   Adds 'reporter' and 'reporterOutput' options.
  * 2013-10-19   v0.2.2   Allow missing operators on error object.
  * 2013-09-24   v0.2.1   Fix error display.
@@ -124,4 +125,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Tue Mar 11 2014 18:48:11.*
+*This file was generated on Wed May 14 2014 02:44:25.*
