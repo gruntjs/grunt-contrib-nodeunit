@@ -55,7 +55,11 @@ module.exports = function(grunt) {
       stack = e.name + ': ' + actual + ' ' + e.operator + ' ' + expected;
     }
 
-    e.stack = stack + '\n' + e.stack.split('\n').slice(1).join('\n');
+    if (e.stack) {
+      stack += '\n' + e.stack.split('\n').slice(1).join('\n');
+    }
+
+    e.stack = stack;
 
     // Restore the global "inspect" property.
     global.inspect = globalInspect;
