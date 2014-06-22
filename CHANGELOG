@@ -1,3 +1,8 @@
+v0.4.1:
+  date: 2014-06-21
+  changes:
+    - Fixes Windows JUnit issue.
+    - Check error.stack exists.
 v0.4.0:
   date: 2014-05-14
   changes:
