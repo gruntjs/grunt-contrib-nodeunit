@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v0.4.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows]([object Object])](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
+# grunt-contrib-nodeunit v0.4.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
 
 > Run Nodeunit unit tests.
 
