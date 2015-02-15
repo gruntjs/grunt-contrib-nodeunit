@@ -254,8 +254,19 @@ module.exports = function(grunt) {
       }
     }
 
-    if (!nodeunit.reporters[options.reporter]) {
-      return done(new Error('Reporter ' + options.reporter + ' not found'));
+    // Find the correct reporter
+    var reporter = nodeunit.reporters[options.reporter];
+
+    if (!reporter) {
+      if (!path.isAbsolute(options.reporter)) {
+        options.reporter = path.resolve(process.cwd(), options.reporter);
+      }
+
+      try {
+        reporter = require(options.reporter);
+      } catch (err) {
+        return done(err);
+      }
     }
 
     var output = '';
@@ -277,7 +288,7 @@ module.exports = function(grunt) {
     }
 
     // Run test(s).
-    nodeunit.reporters[options.reporter].run(this.filesSrc, options.reporterOptions, function(err) {
+    reporter.run(this.filesSrc, options.reporterOptions, function(err) {
       // Write the output of the reporter if wanted
       if (options.reporterOutput) {
         // no longer hook stdout so we can grunt.log
