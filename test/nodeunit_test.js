@@ -26,7 +26,7 @@ exports.nodeunit = {
     grunt.util.spawn({
       grunt: true,
       args: ['test-tap:fail', '--no-color'],
-    }, function(err, result, code) {
+    }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('# fail - fail') !== -1, 'First test should fail');
       test.ok(result.stdout.indexOf('not ok 1 this value should be truthy') !== -1, 'First test failure notice');
@@ -43,8 +43,8 @@ exports.nodeunit = {
     grunt.util.spawn({
       grunt: true,
       args: ['test-tap-out:fail', '--no-color'],
-    }, function(err, result, code) {
-      // stdout message  
+    }, function(err, result) {
+      // stdout message
       test.ok(result.stdout.indexOf('fail.js.tap" created') !== -1, 'File creation notice should be displayed.');
 
       // verify parts of the fail.js.tap contents against ours
@@ -66,7 +66,7 @@ exports.nodeunit = {
     grunt.util.spawn({
       grunt: true,
       args: ['test-junit:fail', '--no-color'],
-    }, function(err, result,code) {
+    }, function(err, result) {
       // verify the junit directory exists
       var junitDir = path.join('tmp', 'fail.junit');
       var junitFile = path.join(junitDir, 'fail.js.xml');
@@ -85,7 +85,7 @@ exports.nodeunit = {
     grunt.util.spawn({
       grunt: true,
       args: ['test-minimal:fail', '--no-color'],
-    }, function(err, result, code) {
+    }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('fail.js.out" created') !== -1, 'File creation notice should be displayed.');
 

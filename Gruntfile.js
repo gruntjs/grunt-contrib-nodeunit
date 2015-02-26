@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     nodeunit: {
       tests: ['test/*_test.js'],
     },
-    
+
     // clean tmp dir
     clean: {
       tests: ['tmp']
@@ -54,8 +54,7 @@ module.exports = function(grunt) {
   // Tests nodeunit with tap reporter
   grunt.registerTask('test-tap', function(which) {
     var test = path.join('test', 'fixtures', which + '.js');
-    var tap = path.join('tmp', which + '.js.tap');
-    
+
     if (grunt.file.exists(test)) {
       grunt.config('nodeunit.tests', test);
     }
@@ -65,12 +64,12 @@ module.exports = function(grunt) {
     grunt.task.run('clean');
     grunt.task.run('nodeunit');
   });
-  
+
   // Tests nodeunit with tap reporter and output saved to a file
   grunt.registerTask('test-tap-out', function(which) {
     var test = path.join('test', 'fixtures', which + '.js');
     var tap = path.join('tmp', which + '.js.tap');
-    
+
     if (grunt.file.exists(test)) {
       grunt.config('nodeunit.tests', test);
     }
@@ -86,7 +85,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test-junit', function(which) {
     var test = path.join('test', 'fixtures', which + '.js');
     var outDir = path.join('tmp', which + '.junit');
-    
+
     if (grunt.file.exists(test)) {
       grunt.config('nodeunit.tests', test);
     }
@@ -102,7 +101,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test-minimal', function(which) {
     var test = path.join('test', 'fixtures', which + '.js');
     var out = path.join('tmp', which + '.js.out');
-    
+
     if (grunt.file.exists(test)) {
       grunt.config('nodeunit.tests', test);
     }
