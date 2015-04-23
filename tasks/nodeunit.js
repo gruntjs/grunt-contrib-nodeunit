@@ -72,22 +72,25 @@ module.exports = function(grunt) {
     // Show a full stack trace?
     var fullStack = grunt.option('verbose') || grunt.option('stack');
     // Reformat stack trace output.
-    error.stack = error.stack.split('\n').map(function(line) {
-      if (line[0] === ' ') {
-        // Remove nodeunit script srcs from non-verbose stack trace.
-        if (!fullStack && line.indexOf(path.join('node_modules', 'nodeunit') + path.sep) !== -1) {
-          return '';
+    if (error.stack) {
+      error.stack = error.stack.split('\n').map(function(line) {
+        if (line[0] === ' ') {
+          // Remove nodeunit script srcs from non-verbose stack trace.
+          if (!fullStack && line.indexOf(path.join('node_modules', 'nodeunit') + path.sep) !== -1) {
+            //return '';
+          }
+          // Remove leading spaces.
+          line = line.replace(/^ {4}(?=at)/, '');
+          // Remove cwd.
+          line = line.replace('(' + process.cwd() + path.sep, '(');
+        } else {
+          line = line.replace(/Assertion(Error)/, '$1');
         }
-        // Remove leading spaces.
-        line = line.replace(/^ {4}(?=at)/, '');
-        // Remove cwd.
-        line = line.replace('(' + process.cwd() + path.sep, '(');
-      } else {
-        line = line.replace(/Assertion(Error)/, '$1');
-      }
-      return line + '\n';
-    }).join('');
-
+        return line + '\n';
+      }).join('');
+    } else {
+      error.stack = error +'\n';
+    }
     return error;
   };
 
