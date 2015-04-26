@@ -13,9 +13,9 @@ exports.nodeunit = {
     test.expect(3);
     grunt.util.spawn({
       grunt: true,
-      args: ['test:fail', '--no-color'],
+      args: ['test:fail', '--no-color']
     }, function(err, result) {
-      test.ok(result.stdout.indexOf("Operator:") !== -1, 'Operator should display for multiline.');
+      test.ok(result.stdout.indexOf('Operator:') !== -1, 'Operator should display for multiline.');
       test.ok(result.stdout.indexOf('Message: this value should be truthy') !== -1, 'Message should have been displayed.');
       test.ok(result.stdout.indexOf('Error: undefined == true') !== -1, 'Error should have been displayed.');
       test.done();
@@ -25,7 +25,7 @@ exports.nodeunit = {
     test.expect(6);
     grunt.util.spawn({
       grunt: true,
-      args: ['test-tap:fail', '--no-color'],
+      args: ['test-tap:fail', '--no-color']
     }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('# fail - fail') !== -1, 'First test should fail');
@@ -42,7 +42,7 @@ exports.nodeunit = {
     test.expect(7);
     grunt.util.spawn({
       grunt: true,
-      args: ['test-tap-out:fail', '--no-color'],
+      args: ['test-tap-out:fail', '--no-color']
     }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('fail.js.tap" created') !== -1, 'File creation notice should be displayed.');
@@ -65,7 +65,7 @@ exports.nodeunit = {
     test.expect(4);
     grunt.util.spawn({
       grunt: true,
-      args: ['test-junit:fail', '--no-color'],
+      args: ['test-junit:fail', '--no-color']
     }, function(err, result) {
       // verify the junit directory exists
       var junitDir = path.join('tmp', 'fail.junit');
@@ -84,7 +84,7 @@ exports.nodeunit = {
     test.expect(3);
     grunt.util.spawn({
       grunt: true,
-      args: ['test-minimal:fail', '--no-color'],
+      args: ['test-minimal:fail', '--no-color']
     }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('fail.js.out" created') !== -1, 'File creation notice should be displayed.');
@@ -98,5 +98,5 @@ exports.nodeunit = {
 
       test.done();
     });
-  },
+  }
 };

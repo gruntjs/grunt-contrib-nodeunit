@@ -26,12 +26,16 @@ module.exports = function(grunt) {
   // Much nicer error formatting than what comes with nodeunit.
   var betterErrors = function (assertion) {
     var e = assertion.error;
-    if (!e || !('actual' in e) || !('expected' in e)) { return assertion; }
+    if (!e || !('actual' in e) || !('expected' in e)) {
+      return assertion;
+    }
 
     // Temporarily override the global "inspect" property because logging
     // the entire global object is just silly.
     var globalInspect = global.inspect;
-    global.inspect = function() { return '[object global]'; };
+    global.inspect = function() {
+      return '[object global]';
+    };
 
     e._message = e.message;
 
@@ -40,7 +44,7 @@ module.exports = function(grunt) {
     var expected = util.inspect(e.expected, false, 10, true);
 
     var indent = function(str) {
-      return (''+str).split('\n').map(function(s) { return '  ' + s; }).join('\n');
+      return ('' + str).split('\n').map(function(s) { return '  ' + s; }).join('\n');
     };
 
     var stack;
@@ -49,7 +53,7 @@ module.exports = function(grunt) {
       stack = [
         'Actual:', indent(actual),
         'Operator:', indent(e.operator),
-        'Expected:', indent(expected),
+        'Expected:', indent(expected)
       ].join('\n');
     } else {
       stack = e.name + ': ' + actual + ' ' + e.operator + ' ' + expected;
@@ -117,9 +121,9 @@ module.exports = function(grunt) {
   // Keep track of failed assertions for pretty-printing.
   var failedAssertions = [];
   function logFailedAssertions() {
-    var assertion;
+    var assertion = failedAssertions.shift();
     // Print each assertion error + stack.
-    while (assertion = failedAssertions.shift()) {
+    while (assertion) {
       betterErrors(assertion);
       cleanStack(assertion.error);
       grunt.verbose.or.error(assertion.testName);
@@ -149,7 +153,9 @@ module.exports = function(grunt) {
         // tests exist in the file or not.
         moduleDone: function(name) {
           // Abort if no tests actually ran.
-          if (name !== currentModule) { return; }
+          if (name !== currentModule) {
+            return;
+          }
           // Print assertion errors here, if verbose mode is disabled.
           if (!grunt.option('verbose')) {
             if (failedAssertions.length > 0) {

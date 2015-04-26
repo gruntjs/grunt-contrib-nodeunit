@@ -16,22 +16,22 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'tasks/*.js',
+        'tasks/*.js'
       ],
       options: {
-        jshintrc: '.jshintrc',
-      },
+        jshintrc: '.jshintrc'
+      }
     },
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js'],
+      tests: ['test/*_test.js']
     },
 
     // clean tmp dir
     clean: {
       tests: ['tmp']
-    },
+    }
   });
 
   // Actually load this plugin's task(s).
