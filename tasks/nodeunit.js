@@ -121,9 +121,9 @@ module.exports = function(grunt) {
   // Keep track of failed assertions for pretty-printing.
   var failedAssertions = [];
   function logFailedAssertions() {
-    var assertion = failedAssertions.shift();
+    var assertion;
     // Print each assertion error + stack.
-    while (assertion) {
+    while (assertion = failedAssertions.shift()) {
       betterErrors(assertion);
       cleanStack(assertion.error);
       grunt.verbose.or.error(assertion.testName);
