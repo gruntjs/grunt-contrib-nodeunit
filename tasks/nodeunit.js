@@ -40,8 +40,8 @@ module.exports = function(grunt) {
     e._message = e.message;
 
     // Pretty-formatted objects.
-    var actual = util.inspect(e.actual, false, 10, true);
-    var expected = util.inspect(e.expected, false, 10, true);
+    var actual = util.inspect(e.actual, { depth: 10, colors: true });
+    var expected = util.inspect(e.expected, { depth: 10, colors: true });
 
     var indent = function(str) {
       return ('' + str).split('\n').map(function(s) { return '  ' + s; }).join('\n');
