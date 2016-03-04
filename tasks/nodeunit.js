@@ -17,7 +17,21 @@ module.exports = function(grunt) {
 
   // External libs.
   var nodeunit = require('nodeunit');
-  var hooker = require('hooker');
+
+  function hook_stdout(callback) {
+    var oldWrite = process.stdout.write;
+
+    process.stdout.write = (function() {
+      return function(string, encoding, fd) {
+        //write.apply(process.stdout, arguments)
+        callback(string, encoding, fd);
+      };
+    })(process.stdout.write);
+
+    return function() {
+      process.stdout.write = oldWrite;
+    };
+  }
 
   // ==========================================================================
   // BETTER ERROR DISPLAY
@@ -268,11 +282,9 @@ module.exports = function(grunt) {
 
     if (options.reporterOutput) {
       // Hook into stdout to capture report
-      hooker.hook(process.stdout, 'write', {
-        pre: function(str) {
-          output += str;
-          return hooker.preempt();
-        }
+      var unhook = hook_stdout(function(string) {
+        output += string;
+        return '';
       });
     }
 
@@ -287,7 +299,9 @@ module.exports = function(grunt) {
       // Write the output of the reporter if wanted
       if (options.reporterOutput) {
         // no longer hook stdout so we can grunt.log
-        hooker.unhook(process.stdout, 'write');
+        if (unhook) {
+          unhook();
+        }
 
         // save all of the output we saw up to this point
         grunt.file.write(options.reporterOutput, output);

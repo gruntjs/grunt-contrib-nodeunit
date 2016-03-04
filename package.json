@@ -13,10 +13,9 @@
   },
   "main": "tasks/nodeunit.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test && grunt jshint"
   },
   "dependencies": {
-    "hooker": "^0.2.3",
     "nodeunit": "^0.9.0"
   },
   "devDependencies": {
