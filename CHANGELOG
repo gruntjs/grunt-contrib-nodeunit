@@ -1,3 +1,9 @@
+v1.0.0:
+  date: 2016-03-04
+  changes:
+    - Fixed unit test to run on Node v4.x and v5.x.
+    - Point main to task and remove peerDep.
+    - Doc updates.
 v0.4.1:
   date: 2014-06-21
   changes:

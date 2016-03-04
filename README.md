@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v0.4.1 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
+# grunt-contrib-nodeunit v1.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
 
 > Run Nodeunit unit tests
 
@@ -125,6 +125,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2016-03-04   v1.0.0   Fixed unit test to run on Node v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
  * 2014-06-21   v0.4.1   Fixes Windows JUnit issue. Check error.stack exists.
  * 2014-05-14   v0.4.0   Bump nodeunit to v0.9.0
  * 2014-01-26   v0.3.0   Adds 'reporter' and 'reporterOutput' options.
@@ -141,4 +142,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Fri Mar 04 2016 15:10:55.*
+*This file was generated on Fri Mar 04 2016 15:33:55.*
