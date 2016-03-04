@@ -66,7 +66,7 @@ exports.nodeunit = {
     grunt.util.spawn({
       grunt: true,
       args: ['test-junit:fail', '--no-color']
-    }, function(err, result) {
+    }, function() {
       // verify the junit directory exists
       var junitDir = path.join('tmp', 'fail.junit');
       var junitFile = path.join(junitDir, 'fail.js.xml');
