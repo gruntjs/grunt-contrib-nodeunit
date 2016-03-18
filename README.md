@@ -125,21 +125,21 @@ grunt.initConfig({
 
 ## Release History
 
- * 2016-03-04   v1.0.0   Fixed unit test to run on Node v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
- * 2014-06-21   v0.4.1   Fixes Windows JUnit issue. Check error.stack exists.
- * 2014-05-14   v0.4.0   Bump nodeunit to v0.9.0
- * 2014-01-26   v0.3.0   Adds 'reporter' and 'reporterOutput' options.
+ * 2016-03-04   v1.0.0   Fixed unit test to run on Node.js v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
+ * 2014-06-21   v0.4.1   Fixes Windows JUnit issue. Check `error.stack` exists.
+ * 2014-05-14   v0.4.0   Bump nodeunit to v0.9.0.
+ * 2014-01-26   v0.3.0   Adds `reporter` and `reporterOutput` options.
  * 2013-10-19   v0.2.2   Allow missing operators on error object.
  * 2013-09-24   v0.2.1   Fix error display.
- * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0
+ * 2013-05-23   v0.2.0   Bump nodeunit to v0.8.0.
  * 2013-02-15   v0.1.2   First official release for Grunt 0.4.0.
  * 2013-01-18   v0.1.2rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.
- * 2013-01-09   v0.1.2rc5   Updating to work with grunt v0.4.0rc5. Switching to this.filesSrc api.
- * 2012-11-13   v0.1.1   Switch to this.file api internally.
+ * 2013-01-09   v0.1.2rc5   Updating to work with grunt v0.4.0rc5. Switching to `this.filesSrc` API.
+ * 2012-11-13   v0.1.1   Switch to `this.file` API internally.
  * 2012-11-04   v0.1.0   Work in progress, not yet officially released.
 
 ---
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Fri Mar 04 2016 15:41:50.*
+*This file was generated on Fri Mar 18 2016 19:05:29.*

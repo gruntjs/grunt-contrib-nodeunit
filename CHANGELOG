@@ -1,22 +1,22 @@
 v1.0.0:
   date: 2016-03-04
   changes:
-    - Fixed unit test to run on Node v4.x and v5.x.
+    - Fixed unit test to run on Node.js v4.x and v5.x.
     - Point main to task and remove peerDep.
     - Doc updates.
 v0.4.1:
   date: 2014-06-21
   changes:
     - Fixes Windows JUnit issue.
-    - Check error.stack exists.
+    - Check `error.stack` exists.
 v0.4.0:
   date: 2014-05-14
   changes:
-    - Bump nodeunit to v0.9.0
+    - Bump nodeunit to v0.9.0.
 v0.3.0:
   date: 2014-01-26
   changes:
-    - Adds 'reporter' and 'reporterOutput' options.
+    - Adds `reporter` and `reporterOutput` options.
 v0.2.2:
   date: 2013-10-19
   changes:
@@ -28,7 +28,7 @@ v0.2.1:
 v0.2.0:
   date: 2013-05-23
   changes:
-    - Bump nodeunit to v0.8.0
+    - Bump nodeunit to v0.8.0.
 v0.1.2:
   date: 2013-02-15
   changes:
@@ -42,11 +42,11 @@ v0.1.2rc5:
   date: 2013-01-09
   changes:
     - Updating to work with grunt v0.4.0rc5.
-    - Switching to this.filesSrc api.
+    - Switching to `this.filesSrc` API.
 v0.1.1:
   date: 2012-11-13
   changes:
-    - Switch to this.file api internally.
+    - Switch to `this.file` API internally.
 v0.1.0:
   date: 2012-11-04
   changes:
