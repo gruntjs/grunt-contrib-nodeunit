@@ -29,11 +29,11 @@ exports.nodeunit = {
     }, function(err, result) {
       // stdout message
       test.ok(result.stdout.indexOf('# fail - fail') !== -1, 'First test should fail');
-      test.ok(result.stdout.indexOf('not ok 1 this value should be truthy') !== -1, 'First test failure notice');
+      test.ok(result.stdout.indexOf('not ok 1 - this value should be truthy') !== -1, 'First test failure notice');
       test.ok(result.stdout.indexOf('# fail - failSupertestError') !== -1, 'Second test should fail');
-      test.ok(result.stdout.indexOf('not ok 2 Something arbitrary') !== -1, 'Second test failure message');
-      test.ok(result.stdout.indexOf('# tests 2') !== -1, 'Total test count');
-      test.ok(result.stdout.indexOf('# fail  2') !== -1, 'Total failure count');
+      test.ok(result.stdout.indexOf('not ok 2 - Something arbitrary') !== -1, 'Second test failure message');
+      test.ok(result.stdout.indexOf('failed 2') !== -1, 'Total failure count');
+      test.ok(result.stdout.indexOf('2 tests') !== -1, 'Total test count');
 
       test.done();
     });
@@ -52,17 +52,17 @@ exports.nodeunit = {
       var tapContents = grunt.util.normalizelf(grunt.file.read(tapFile));
 
       test.ok(tapContents.indexOf('# fail - fail') !== -1, 'First test should fail');
-      test.ok(tapContents.indexOf('not ok 1 this value should be truthy') !== -1, 'First test failure notice');
+      test.ok(tapContents.indexOf('not ok 1 - this value should be truthy') !== -1, 'First test failure notice');
       test.ok(tapContents.indexOf('# fail - failSupertestError') !== -1, 'Second test should fail');
-      test.ok(tapContents.indexOf('not ok 2 Something arbitrary') !== -1, 'Second test failure message');
-      test.ok(tapContents.indexOf('# tests 2') !== -1, 'Total test count');
-      test.ok(tapContents.indexOf('# fail  2') !== -1, 'Total failure count');
+      test.ok(tapContents.indexOf('not ok 2 - Something arbitrary') !== -1, 'Second test failure message');
+      test.ok(tapContents.indexOf('failed 2') !== -1, 'Total failure count');
+      test.ok(tapContents.indexOf('2 tests') !== -1, 'Total test count');
 
       test.done();
     });
   },
   junit: function(test) {
-    test.expect(4);
+    test.expect(5);
     grunt.util.spawn({
       grunt: true,
       args: ['test-junit:fail', '--no-color']
@@ -73,7 +73,8 @@ exports.nodeunit = {
       var junitContents = grunt.util.normalizelf(grunt.file.read(junitFile));
 
       test.ok(junitContents.indexOf('<testsuite name="fail.js"') !== -1, 'testsuite element');
-      test.ok(junitContents.indexOf('errors="2"') !== -1, 'Two errors detected');
+      test.ok(junitContents.indexOf('errors="1"') !== -1, 'One error detected');
+      test.ok(junitContents.indexOf('failures="1"') !== -1, 'One failure detected');
       test.ok(junitContents.indexOf('AssertionError: this value should be truthy') !== -1, 'Assertion');
       test.ok(junitContents.indexOf('fail - failSupertestError') !== -1, 'Failure message');
 
