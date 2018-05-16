@@ -16,7 +16,7 @@ module.exports = function(grunt) {
   var fs = require('fs');
 
   // External libs.
-  var nodeunit = require('nodeunit');
+  var nodeunit = require('nodeunit-x');
 
   function hook_stdout(callback) {
     var oldWrite = process.stdout.write;

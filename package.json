@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-nodeunit",
   "description": "Run Nodeunit unit tests",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
@@ -9,7 +9,7 @@
   "repository": "gruntjs/grunt-contrib-nodeunit",
   "license": "MIT",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=6"
   },
   "main": "tasks/nodeunit.js",
   "scripts": {
