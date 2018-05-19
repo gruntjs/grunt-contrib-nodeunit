@@ -125,6 +125,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2018-05-19   v2.0.0   Updates to latest node.js supported versions. Updated to latest nodeunit. Updates to dependencies for security reasons.
  * 2016-03-04   v1.0.0   Fixed unit test to run on Node.js v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
  * 2014-06-21   v0.4.1   Fixes Windows JUnit issue. Check `error.stack` exists.
  * 2014-05-14   v0.4.0   Bump nodeunit to v0.9.0.
@@ -142,4 +143,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Sat May 19 2018 15:37:00.*
+*This file was generated on Sat May 19 2018 15:46:13.*

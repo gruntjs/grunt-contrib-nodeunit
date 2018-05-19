@@ -1,3 +1,9 @@
+v2.0.0:
+  date: 2018-05-19
+  changes:
+    - Updates to latest node.js supported versions.
+    - Updated to latest nodeunit.
+    - Updates to dependencies for security reasons.
 v1.0.0:
   date: 2016-03-04
   changes:
