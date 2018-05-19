@@ -16,7 +16,7 @@ module.exports = function(grunt) {
   var fs = require('fs');
 
   // External libs.
-  var nodeunit = require('nodeunit');
+  var nodeunit = require('nodeunit-x');
 
   function hook_stdout(callback) {
     var oldWrite = process.stdout.write;
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
     error.stack = error.stack.split('\n').map(function(line) {
       if (line[0] === ' ') {
         // Remove nodeunit script srcs from non-verbose stack trace.
-        if (!fullStack && line.indexOf(path.join('node_modules', 'nodeunit') + path.sep) !== -1) {
+        if (!fullStack && line.indexOf(path.join('node_modules', 'nodeunit-x') + path.sep) !== -1) {
           return '';
         }
         // Remove leading spaces.
@@ -256,12 +256,12 @@ module.exports = function(grunt) {
     var nodeUnitDefaults = {};
 
     // check for nodeunit under our package's node_modules directory first
-    var nodeUnitDefaultsFile = path.join(__dirname, '..', 'node_modules', 'nodeunit', 'bin', 'nodeunit.json');
+    var nodeUnitDefaultsFile = path.join(__dirname, '..', 'node_modules', 'nodeunit-x', 'bin', 'nodeunit.json');
 
     if (!fs.existsSync(nodeUnitDefaultsFile)) {
       // if both grunt-contrib-nodeunit and nodeunit are listed as dependencies for this project, they'd
       // be located at the same folder level.  So check for that location next.
-      nodeUnitDefaultsFile = path.join(__dirname, '..', '..', 'nodeunit', 'bin', 'nodeunit.json');
+      nodeUnitDefaultsFile = path.join(__dirname, '..', '..', 'nodeunit-x', 'bin', 'nodeunit.json');
     }
 
     if (fs.existsSync(nodeUnitDefaultsFile)) {
