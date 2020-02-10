@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt](https://gruntjs.com/) before, be sure to check out the [Getting Started](https://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](https://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-contrib-nodeunit --save-dev
@@ -143,4 +143,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Sat May 19 2018 15:46:13.*
+*This file was generated on Mon Feb 10 2020 13:20:25.*
