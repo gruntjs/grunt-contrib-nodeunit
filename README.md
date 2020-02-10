@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v2.0.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
+# grunt-contrib-nodeunit v2.1.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit.svg?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-nodeunit) [![Build Status: Windows](https://ci.appveyor.com/api/projects/status/8526qwiyaavbfbxh/branch/master?svg=true)](https://ci.appveyor.com/project/gruntjs/grunt-contrib-nodeunit/branch/master)
 
 > Run Nodeunit unit tests
 
@@ -125,6 +125,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2020-02-10   v2.1.0   Updates to latest node.js supported versions. Updated to latest nodeunit and security packages.
  * 2018-05-19   v2.0.0   Updates to latest node.js supported versions. Updated to latest nodeunit. Updates to dependencies for security reasons.
  * 2016-03-04   v1.0.0   Fixed unit test to run on Node.js v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
  * 2014-06-21   v0.4.1   Fixes Windows JUnit issue. Check `error.stack` exists.
@@ -143,4 +144,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Mon Feb 10 2020 13:20:25.*
+*This file was generated on Mon Feb 10 2020 14:23:59.*
