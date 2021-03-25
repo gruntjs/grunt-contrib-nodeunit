@@ -125,7 +125,7 @@ grunt.initConfig({
 
 ## Release History
 
- * 2020-03-25   v3.0.0   Updated to latest nodeunit and security packages.
+ * 2021-03-25   v3.0.0   Updated to latest nodeunit and security packages.
  * 2020-02-10   v2.1.0   Updates to latest node.js supported versions. Updated to latest nodeunit and security packages.
  * 2018-05-19   v2.0.0   Updates to latest node.js supported versions. Updated to latest nodeunit. Updates to dependencies for security reasons.
  * 2016-03-04   v1.0.0   Fixed unit test to run on Node.js v4.x and v5.x. Point main to task and remove peerDep. Doc updates.
@@ -145,4 +145,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Thu Mar 25 2021 12:04:38.*
+*This file was generated on Thu Mar 25 2021 12:26:46.*
