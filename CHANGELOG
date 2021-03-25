@@ -1,3 +1,7 @@
+v3.0.0:
+  date: 2020-03-25
+  changes:
+    - Updated to latest nodeunit and security packages.
 v2.1.0:
   date: 2020-02-10
   changes:
