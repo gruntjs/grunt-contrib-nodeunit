@@ -1,4 +1,4 @@
-# grunt-contrib-nodeunit v3.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-nodeunit/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-nodeunit/actions?workflow=Tests)
+# grunt-contrib-nodeunit v4.0.0 [![Build Status](https://github.com/gruntjs/grunt-contrib-nodeunit/workflows/Tests/badge.svg)](https://github.com/gruntjs/grunt-contrib-nodeunit/actions?workflow=Tests)
 
 > Run Nodeunit unit tests
 
@@ -125,6 +125,7 @@ grunt.initConfig({
 
 ## Release History
 
+ * 2021-10-05   v4.0.0   Requires node.js v12 Updated to latest nodeunit and dependency packages.
  * 2021-03-25   v3.0.0   Updated to latest nodeunit and security packages.
  * 2020-02-10   v2.1.0   Updates to latest node.js supported versions. Updated to latest nodeunit and security packages.
  * 2018-05-19   v2.0.0   Updates to latest node.js supported versions. Updated to latest nodeunit. Updates to dependencies for security reasons.
@@ -145,4 +146,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Thu Mar 25 2021 12:26:46.*
+*This file was generated on Tue Oct 05 2021 22:15:36.*

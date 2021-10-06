@@ -1,3 +1,8 @@
+v4.0.0:
+  date: 2021-10-05
+  changes:
+    - Requires node.js v12
+    - Updated to latest nodeunit and dependency packages.
 v3.0.0:
   date: 2021-03-25
   changes:
