@@ -1,7 +1,7 @@
 {
   "name": "grunt-contrib-nodeunit",
   "description": "Run Nodeunit unit tests",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": {
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
@@ -19,11 +19,11 @@
     "nodeunit-x": "^0.15.0"
   },
   "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-clean": "^2.0.0",
+    "grunt": "^1.5.3",
+    "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-internal": "^7.0.0",
-    "grunt-contrib-jshint": "^3.1.1",
-    "tap": "^15.0.10"
+    "grunt-contrib-jshint": "^3.2.0",
+    "tap": "^16.2.0"
   },
   "keywords": [
     "gruntplugin",
