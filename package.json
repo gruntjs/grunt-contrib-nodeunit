@@ -16,7 +16,7 @@
     "test": "grunt test && grunt jshint"
   },
   "dependencies": {
-    "nodeunit-x": "^0.15.0"
+    "nodeunit-x": "^0.16.0"
   },
   "devDependencies": {
     "grunt": "^1.5.3",
