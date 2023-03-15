@@ -146,4 +146,4 @@ grunt.initConfig({
 
 Task submitted by ["Cowboy" Ben Alman](http://benalman.com)
 
-*This file was generated on Tue May 24 2022 14:26:57.*
+*This is a generated file.*

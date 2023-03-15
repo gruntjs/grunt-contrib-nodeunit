@@ -9,7 +9,7 @@
   "repository": "gruntjs/grunt-contrib-nodeunit",
   "license": "MIT",
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">=14.0"
   },
   "main": "tasks/nodeunit.js",
   "scripts": {
@@ -19,11 +19,11 @@
     "nodeunit-x": "^0.16.0"
   },
   "devDependencies": {
-    "grunt": "^1.5.3",
+    "grunt": "^1.6.1",
     "grunt-contrib-clean": "^2.0.1",
-    "grunt-contrib-internal": "^7.0.0",
+    "grunt-contrib-internal": "^8.0.2",
     "grunt-contrib-jshint": "^3.2.0",
-    "tap": "^16.2.0"
+    "tap": "^16.3.4"
   },
   "keywords": [
     "gruntplugin",
